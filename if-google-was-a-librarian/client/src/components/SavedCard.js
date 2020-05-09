@@ -1,6 +1,8 @@
 import React from "react";
-return (
+
+
 function SavedCard (props){
+    return (
     <div className="card" key={props.id}>
         <div className="card-body">
             <div className="row">
@@ -22,6 +24,6 @@ function SavedCard (props){
 <button className="card-link" onClick={() => props.saveBook(props)}>Save</button>
 </div>
 </div>
-})
+)}
 
 export default SavedCard;

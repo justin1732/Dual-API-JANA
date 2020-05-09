@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../utils/API";
-import BooksContainer from "../components/BooksContainer";
+import BookCard from "../components/BookCard.js";
 
 class Search extends React.Component {
 
@@ -74,14 +74,14 @@ class Search extends React.Component {
                     <div className="row" key={books.id}>
                         <div className="col-md-6 mx-auto">
                             <br />
-                            <BooksContainer
+                            <BookCard
                                 title={books.volumeInfo.title}
                                 author={books.volumeInfo.authors}
                                 key={books.id}
                                 id={books.id}
                                 synopsis={books.volumeInfo.description}
                                 link={books.volumeInfo.previewLink}
-                                img={books.volumeInfo.imageLinks.thumbnail}
+                                img={books.volumeInfo.imageLinks.smallThumbnail}
                                 saveBook={this.saveBook}
                                 
                             />

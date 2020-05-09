@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../utils/API";
-import SavedContainer from "../components/SavedContainer";
+import SavedCard from "../components/SavedCard";
 
 class SavedBooks extends React.Component {
     state = {
@@ -33,7 +33,7 @@ class SavedBooks extends React.Component {
                         <div className="row" key={book._id}>
                             <div className="col-md-12 mx-auto">
                                 <br />
-                                <SavedContainer
+                                <SavedCard
                                     title={book.title}
                                     author={book.author}
                                     synopsis={book.synopsis}
