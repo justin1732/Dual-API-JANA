@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "google-librarian",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "Justin's Google Books React JS Demo",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
