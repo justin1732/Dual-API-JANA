@@ -77,6 +77,7 @@ class Search extends React.Component {
                     <div className="row" key={book.id}>
                         <div className="col-md-6 mx-auto">
                             <br />
+                            
                            return <BookCard
                                 title={book.volumeInfo.title}
                                 author={book.volumeInfo.authors}
@@ -84,7 +85,7 @@ class Search extends React.Component {
                                 id={book.id}
                                 synopsis={book.volumeInfo.description}
                                 link={book.volumeInfo.previewLink}
-                                // image= {book.volumeInfo.imageLinks.thumbnail}
+                                // image= {book.volumeInfo.imageLinks}
                                 saveBook={this.saveBook}
                                 
                             />
