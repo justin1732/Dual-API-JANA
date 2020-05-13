@@ -51,7 +51,10 @@ class Search extends React.Component {
                 if (res.data.status === "error") {
                     throw new Error(res.data.message);
                 }
+
+                console.log("res;;", res)
                 this.setState({ books: res.data.items });
+                debugger;
             })
             .catch(err => this.setState({ error: err.message }));
     };
@@ -70,18 +73,18 @@ class Search extends React.Component {
                         </form>
                     </div>
                 </div>
-                {this.state.books.map(books => (
-                    <div className="row" key={books.id}>
+                {(this.state.books.length > 0) && this.state.books.map(book => (
+                    <div className="row" key={book.id}>
                         <div className="col-md-6 mx-auto">
                             <br />
-                            <BookCard
-                                title={books.volumeInfo.title}
-                                author={books.volumeInfo.authors}
-                                key={books.id}
-                                id={books.id}
-                                synopsis={books.volumeInfo.description}
-                                link={books.volumeInfo.previewLink}
-                                img={books.volumeInfo.imageLinks.smallThumbnail}
+                           return <BookCard
+                                title={book.volumeInfo.title}
+                                author={book.volumeInfo.authors}
+                                key={book.id}
+                                id={book.id}
+                                synopsis={book.volumeInfo.description}
+                                link={book.volumeInfo.previewLink}
+                                // image= {book.volumeInfo.imageLinks.thumbnail}
                                 saveBook={this.saveBook}
                                 
                             />
