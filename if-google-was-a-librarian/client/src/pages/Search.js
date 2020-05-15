@@ -1,100 +1,49 @@
 import React from "react";
-import API from "../utils/API";
-import BookCard from "../components/BookCard.js";
-
+import Header from "../components/Header"
+import Results from "../components/Results"
+import API from "../utils/API"
+import ReactDOM from "react-dom";
 class Search extends React.Component {
-
     state = {
-        search: "",
         books: [],
-        title: "",
-        author: "",
-        synopsis: "",
-        error: ""
-    };
-
-    componentDidMount() {
+        search: "",
+        status: "Search for a Book!",
     }
-    searchBooks = query => {
-        API.search(query)
-            .then(res => this.setState({ result: res.data }))
-            .catch(err => console.log(err));
+    handleSearch = (search) => {
+        API.searchBooks(search)
+            .then(res => {
+                this.setState({ books: res.data, status: "Search Results:" })
+                console.log(this.state)
+                const results = ReactDOM.findDOMNode(this.refs.test);
+                results.scrollIntoView({behavior: 'smooth'});
+            })
     }
-    handleInputChange = event => {
-        this.setState({ search: event.target.value });
-        console.log(this.state.search);
-    }
-    saveBook = data => {
-
-        API.save({
-            title: data.title,
-            author: data.author,
-            synopsis: data.synopsis,
-            link: data.link,
-            img: data.img
+    updateInput = (event) => {
+        this.setState({
+            search: event.target.value
         })
-            .then(res => {
-                console.log(res.data.config)
-                if (res.data.status === "error") {
-                    throw new Error(res.data.message);
-                }
-                console.log("what now?")
-                console.log(res.data.config)
-            })
-            .catch(err => console.log(err.response));
     }
-
-    handleFormSubmit = event => {
-        event.preventDefault();
-        API.search(this.state.search)
-            .then(res => {
-                if (res.data.status === "error") {
-                    throw new Error(res.data.message);
-                }
-
-                console.log("res;;", res)
-                this.setState({ books: res.data.items });
-                debugger;
-            })
-            .catch(err => this.setState({ error: err.message }));
-    };
-
+    componentWillUnmount() {
+        API.deleteAllUnsaved()
+    }
     render() {
         return (
             <div>
-                <div className="row">
-                    <div className="col-md-9 mx-auto">
-                    <h1>Search Books by Title</h1>
-                        <form>
-                            <div className="form-group">
-                                <input type="text" className="form-control" id="titleSearch" placeholder="Title" onChange={this.handleInputChange} />
-                            </div>
-                            <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
-                        </form>
-                    </div>
+                <Header
+                    handleSearch={this.handleSearch}
+                    search={this.state.search}
+                    updateInput={this.updateInput}
+                />
+                <div ref="test" >
+                    <Results
+                        books={this.state.books}
+                        status={this.state.status}
+                        buttonText="Save"
+                    />
                 </div>
-                {(this.state.books.length > 0) && this.state.books.map(book => (
-                    <div className="row" key={book.id}>
-                        <div className="col-md-6 mx-auto">
-                            <br />
-                            
-                           return <BookCard
-                                title={book.volumeInfo.title}
-                                author={book.volumeInfo.authors}
-                                key={book.id}
-                                id={book.id}
-                                synopsis={book.volumeInfo.description}
-                                link={book.volumeInfo.previewLink}
-                                // image= {book.volumeInfo.imageLinks}
-                                saveBook={this.saveBook}
-                                
-                            />
-                        </div>
-                    </div>
-                ))}
             </div>
-        );
+        )
     }
 }
 
-export default Search;
+export default Search
