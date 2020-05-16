@@ -31,7 +31,7 @@ class Results extends Component {
                             </div>
                             <div className="col-md-4">
                                 <div className="buttonDiv">
-                                <button className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</button>
+                                <button className="view"><a className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</a></button>
                                     <button className="save btn" onClick={() => this.handleButton(book._id)} style={this.props.buttonColor}>{this.props.buttonText}</button>
                                 </div>
                             </div>
