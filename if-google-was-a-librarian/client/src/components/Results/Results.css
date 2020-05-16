@@ -3,19 +3,21 @@
     height: 100%;
     }
     .results {
+        text-align:center;
         padding-top: 20px;
-        background: rgb(94, 9, 9);
+        background: crimson;
         height: 100%;
     }
     .result-box{
         background: #f9f5da
     }
-    p {
+    /* p {
         float: left;
         text-align: left;
-    }
+    } */
     .title, .authors {
         margin-left: 10px;
+        padding: 10px;
     }
     .buttonDiv {
         margin-right: 20px;

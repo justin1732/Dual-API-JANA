@@ -12,7 +12,7 @@ const Footer = props => (
                 <a href="https://github.com/justin1732/HW16GoogleReactSearch" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-react fa-2x"></i>
                 </a>
-                <div classNmae="spacer"></div>
+                <div className="spacer"></div>
                 Justin Tucker, 2020
             </td>
         </tr>
