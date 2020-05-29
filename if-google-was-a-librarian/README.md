@@ -1,14 +1,19 @@
-# Create React Express App
+# Google Books React JS and Heroku Search
 
-## About This Boilerplate
+## What if Google Was a Librarian?
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+This was the final individual project for the University of Denver FullStack Coding Bootcamp.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+This app uses React JS and Heroku Deployment to search Google Books' API and return objects using Node and React JS configurations. Users can then save books or explore those searched books more thoroughly in the app itself.
 
 ## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+For a local version, I recommend using Visual Studio Code. Navigate over to my GitHub repo, click clone, and be sure to type in the following below:
+git clone
+Navigate over to the terminal and open up the area around server.js in the terminal. Then type:
+npm install
+After all dependencies are loaded, then type:
+npm start
 
 ```
 npm install
@@ -24,6 +29,17 @@ npm start
 
 Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-## Deployment (Heroku)
+For remote viewing, my app is on Heroku at:
+https://justintuckergooglebooks.herokuapp.com/
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+Finally, my repo can be found at:
+https://github.com/justin1732/HW16GoogleReactSearch
+
+## Technologies Used
+
+his application follows MERN deployment principles with MVP file and folder structuring. This application relies upon React JS connected through Heroku and uses Mongo Mongoose to communicate with mLab MongoDB for database use in production with Express for the engine. Other dependenices include Path for assistance in routing, some JQuery and a lot of Axios for rendering, and Bootstrap, React Bootstrap, ReactStrap and some @material-ui for assistance in rendering and other elements.
+
+## Contact Information
+I am available to be found at justteach17@gmail.com and my website is justin1732.github.io 
+
+
