@@ -41,9 +41,9 @@ Search for a book in the search bar above. You should see multiple titles show u
 
 ## Technologies Used
 
-This application follows MERN deployment principles with MVP file and folder structuring. This application relies upon React JS connected through Heroku and uses Mongo Mongoose to communicate with mLab MongoDB for database use in production with Express for the engine. Other dependenices include Path for assistance in routing, some JQuery and a lot of Axios for rendering, and Bootstrap, React Bootstrap, ReactStrap and some @material-ui for assistance in rendering and other elements.
+This application follows MERN deployment principles with MVP file and folder structuring. This application relies upon React JS connected through Heroku and uses Mongo Mongoose to communicate with mLab MongoDB for database use in production with Express for the engine. Other dependencies include Path for assistance in routing, some JQuery and a lot of Axios for rendering, and Bootstrap, React Bootstrap, ReactStrap and some @material-ui for assistance in rendering and other elements.
 
 ## Contact Information
-I am available to be found at justteach17@gmail.com and my website is justin1732.github.io 
+I am available to be contacted at justteach17@gmail.com and my website is justin1732.github.io 
 
 
