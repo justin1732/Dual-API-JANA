@@ -35,6 +35,10 @@ https://justintuckergooglebooks.herokuapp.com/
 Finally, my repo can be found at:
 https://github.com/justin1732/HW16GoogleReactSearch
 
+## Using this application
+
+Search for a book in the search bar above. You should see multiple titles show up. Save a book by clicking on save, or view the original Google Books link by clicking view. Finally, see your saved books by going to "Saved" above.
+
 ## Technologies Used
 
 This application follows MERN deployment principles with MVP file and folder structuring. This application relies upon React JS connected through Heroku and uses Mongo Mongoose to communicate with mLab MongoDB for database use in production with Express for the engine. Other dependenices include Path for assistance in routing, some JQuery and a lot of Axios for rendering, and Bootstrap, React Bootstrap, ReactStrap and some @material-ui for assistance in rendering and other elements.
