@@ -13,7 +13,7 @@ const Footer = props => (
                 <i className="fab fa-react fa-2x"></i>
                 </a>
                 <div className="spacer"></div>
-                Justin Tucker, 2020
+                Justin Tucker, 2022
             </td>
         </tr>
     </tbody>
