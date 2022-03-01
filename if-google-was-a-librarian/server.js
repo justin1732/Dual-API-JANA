@@ -11,12 +11,15 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+//environment variables
+require ('dotenv').config();
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 //Connect to MongoDB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/book";
+var MONGODB_URI = process.env.ATLAS_URI || "mongodb://localhost/book";
 mongoose
     .connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
         if (err) throw err;
