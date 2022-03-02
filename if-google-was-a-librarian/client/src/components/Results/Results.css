@@ -9,7 +9,12 @@
         height: 100%;
     }
     .result-box{
-        background: #f9f5da
+        background: #f9f5da;
+        width: 80%;
+        border: 15px solid darkblue;
+        padding: 50px;
+        margin: auto;
+        text-align: center;
     }
     /* p {
         float: left;
