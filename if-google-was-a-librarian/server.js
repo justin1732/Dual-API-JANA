@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 //environment variables
-require ('dotenv').config();
+const dotenv= require ('dotenv').config();
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
