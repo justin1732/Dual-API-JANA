@@ -11,8 +11,8 @@ class Home extends Component {
             <h1>Home page for the dual-API searches</h1>
            <Link to= "/anime" className="btn btn-danger">To Anime</Link>
            <Link to= "/books" className="btn btn-danger">To Books</Link>
-           <Link to ="/saved" className="btn btn-info">To Saved</Link>
-           <Link to ="/asaved" className="btn btn-info">To ASaved</Link>
+           <Link to ="/saved" className="btn btn-info">To Saved Books</Link>
+           <Link to ="/asaved" className="btn btn-info">To Saved Anime</Link>
            <Link to ="/results" className="btn btn-dark">To Results</Link>
            <form>
                <div className="html">

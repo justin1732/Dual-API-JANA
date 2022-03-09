@@ -3,7 +3,7 @@ import SavedHeader from "../components/SavedHeader"
 import Results from "../components/Results"
 import API from "../utils/API"
 // import AResults from "../components/AResults";
-import ASaved from "./ASaved"
+// import ASaved from "./ASaved"
 
 class Saved extends React.Component {
     state = {
@@ -53,7 +53,7 @@ class Saved extends React.Component {
                 buttonColor = {this.state.btnColor}
                 getAnime = {this.getAnime}
             /> */}
-                <ASaved />
+                {/* <ASaved /> */}
             </div>
         )
     }

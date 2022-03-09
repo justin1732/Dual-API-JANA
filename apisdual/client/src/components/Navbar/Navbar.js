@@ -14,6 +14,7 @@ class Navbar extends Component {
                     <Link to ="/anime">Anime</Link>
                     <Link to="/saved">Saved</Link>
                     <Link to="/asaved">ASaved</Link>
+                    <Link to="/results">Results</Link>
                 </div>
             </nav>
 
