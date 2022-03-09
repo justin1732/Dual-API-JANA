@@ -10,6 +10,7 @@ import Search from "./pages/Search";
 import ASearch from "./pages/ASearch";
 import Saved from "./pages/Saved";
 import ASaved from "./pages/ASaved";
+import TheResults from './pages/TheResults';
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import './App.css';
@@ -28,6 +29,7 @@ class App extends Component {
        <Route exact path="/books" component={Search} />
             <Route exact path="/saved" component={Saved} />
             <Route exact path="/asaved" component={ASaved} />
+            <Route exact path="/results" component={TheResults}/>
           </Switch>
         </div>
         <Footer />

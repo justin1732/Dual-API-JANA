@@ -1,5 +1,5 @@
 import React from "react";
-import SavedHeader from "../components/SavedHeader"
+// import SavedHeader from "../components/SavedHeader"
 import API from "../utils/API"
 import AResults from "../components/AResults";
 
@@ -23,8 +23,7 @@ getAnime = () =>{
 render() {
     return (
         <div>
-            <SavedHeader />
-            <AResults
+                      <AResults
                 animes = {this.state.saved}
                 status = "Saved Anime:"
                 buttonText = "Delete"
