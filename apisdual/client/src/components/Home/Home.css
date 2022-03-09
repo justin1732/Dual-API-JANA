@@ -1,0 +1,14 @@
+.home {
+    text-align:center;
+    padding-top: 20px;
+    background: darkgray;
+    height: 800px;
+    background-repeat: repeat;   
+    background-size: cover;     
+}
+
+.html{
+    height: 100%;
+    margin: 0;
+    background-color: lightblue
+}

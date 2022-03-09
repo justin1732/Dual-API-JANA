@@ -9,8 +9,8 @@ class Header extends React.Component {
     render() {
         return(
             <div className="header">
-                <h1>Google Books Search</h1>
-                <h2>Search for and Save Books of Interest</h2>
+                <h1>Books and Anime Search</h1>
+                <h2>Search for and Save Media of Interest</h2>
                 <form>
                     <div className="input-group">
                         <input className="form-control" type="text" placeholder="Find a Book" value={this.props.search} onChange={this.props.updateInput}></input>

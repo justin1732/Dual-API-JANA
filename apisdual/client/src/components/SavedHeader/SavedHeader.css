@@ -1,31 +1,20 @@
-.header {
-    background: url("./loc.jpg") no-repeat;
+.savedHeader {
+    background: lightgoldenrodyellow no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
       background-position: right;
     height: 100vh;
-    color: lightblue;
-        text-shadow: 1px 1px black;
+    color:crimson;
+    text-shadow: 1px 1px black;
     padding-top: 25vh;
 }
-.header h1{
+.savedHeader h1{
     font-size: 64px;
     font-family: 'Oleo Script', cursive;
 }
-.header h2 {
+.savedHeader h2 {
     font-size: 30px;
     font-family: 'Oleo Script', cursive;
-}
-.btn {
-    background: darkgreen;
-    height: 35px;
-}
-input {
-    height: 35px;
-}
-form {
-    width: 35vw;
-    margin: 40px auto;
 }

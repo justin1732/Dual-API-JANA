@@ -23,13 +23,11 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/book";
 mongoose
     .connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
         if (err) throw err;
-        console.log("database connected")
+        console.log("Database Connected!")
     })
-    .then(() => console.log("Database Connected!"))
-    .catch(err => console.log(err));
 // Define API routes here
-//search route
-app.get("/search/:search", (req, res) => {
+//Google Books search route
+app.get("/book/:search", (req, res) => {
   let search = req.params.search;
   axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search).then(function(response) {
       let books = response.data.items
@@ -78,6 +76,60 @@ app.delete("/api/books/:id", (req, res) => {
   db.Book
     .deleteOne({_id: req.params.id})
     .then(dbBook => res.json(dbBook))
+})
+
+//Anime search route
+app.get("/anime/:search", (req, res) => {
+  let search = req.params.search;
+  // axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search).then(function(response) {
+  axios.get("https://api.jikan.moe/v4/anime?q=" + search).then(function(response) {
+      let animes = response.data.data
+      // console.log(animes)
+      let array =[];
+      for(let i=0; i< animes.length; i++) {
+        if(animes[i].type !== undefined && animes[i].title !== undefined){
+        let AnimeInfo = {
+              title: animes[i].title,
+              type: animes[i].type,
+              description: animes[i].synopsis,
+              // image: books[i].volumeInfo.imageLinks.smallThumbnail,
+              // link: books[i].volumeInfo.infoLink
+          }
+        array.push(AnimeInfo);  
+      }}
+      db.Anime
+            .create(array)
+            .then(dbAnime => res.json(dbAnime))
+            .catch(err => res.json(err))
+    })
+})
+
+//get all saved anime from db
+app.get("/api/animes", (req, res) => {
+  db.Anime
+    .find({saved: true})
+    .then(dbAnime => res.json(dbAnime))
+    .catch(err => res.json(err))
+})
+//save a anime to db
+app.post("/api/animes/:id", (req, res)  => {
+  db.Anime
+    .findOneAndUpdate({_id: req.params.id}, {saved: true}, {new: true})
+    .then(dbAnime => {
+      res.json(dbAnime)
+    })
+})
+//delete all anime from db
+app.delete("/api/animes", (req, res) => {
+  db.Anime
+    .deleteMany({saved: false})
+    .then(dbAnimes => res.json(dbAnimes))
+})
+//delete an anime book from db
+app.delete("/api/animes/:id", (req, res) => {
+  db.Anime
+    .deleteOne({_id: req.params.id})
+    .then(dbAnime => res.json(dbAnime))
 })
 
 // Send every other request to the React app

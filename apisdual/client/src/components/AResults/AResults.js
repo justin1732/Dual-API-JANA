@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./Results.css"
+import "./AResults.css"
 import API from "../../utils/API"
 
-class Results extends Component {
+
+class AResults extends Component {
     handleSave = (id) => {
-        API.saveBook(id).then(res => console.log(res.data))
+        API.saveAnime(id).then(res => console.log(res.status))
     }
     handleDelete = (id) => {
-        API.deleteBook(id).then(() => this.props.getSaved())
+        API.deleteAnime(id).then(() => this.props.getAnime())
     }
     handleButton = (id) => {
         if (this.props.buttonText === "Save") {
@@ -22,26 +23,24 @@ class Results extends Component {
             <div className="results">
                 <h1>{this.props.status}</h1>
 
-                {this.props.books.map(book => (
-                    <div className="result-box" key={book.link}>
+                {this.props.animes.map(anime => (
+                    <div className="result-box" key={anime.type}>
                          <div className="row">
                             <div className="col-md-8">
-                                <p className="title">{book.title}</p><br />
-                                <p className="authors">Written By: {book.authors.map(author => (<span key={author}>{author} </span>))}</p>
+                                <p className="title">{anime.title}</p><br />
+                                <p className="type">Type: {anime.type}</p>
                             </div>
                             <div className="col-md-4">
                                 <div className="buttonDiv">
-                                <button className="view"><a className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</a></button>
-                                    <button className="save btn" onClick={() => this.handleButton(book._id)} style={this.props.buttonColor}>{this.props.buttonText}</button>
+                                <button className="save btn" onClick={() => this.handleButton(anime._id)} style={this.props.buttonColor}>{this.props.buttonText}</button>
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-4">
-                                <img src={book.image} alt="book cover" />
                             </div>
                             <div className="col-md-10">
-                                <p className="description">{book.description}</p>
+                                <p className="description">{anime.description}</p>
                             </div>
                         </div>
                         <br />
@@ -53,4 +52,4 @@ class Results extends Component {
     }
 };
 
-export default Results;
+export default AResults;
